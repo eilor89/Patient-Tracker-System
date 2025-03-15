@@ -1,100 +1,105 @@
-Patient Tracker System
+
+# Patient Tracker System
+
 A comprehensive healthcare management solution for appointment booking and medical records management.
-Overview
-The Patient Tracker System is a streamlined application designed to manage healthcare appointments and patient medical records efficiently. The system provides two main functionalities:
 
-Patient Appointment Booking: Allows patients to log in, select a date, view available time slots, and book appointments.
-Medical Record Management: Enables healthcare staff to access and update patient medical records with diagnoses, treatment plans, medications, and notes.
+## Overview
 
-System Features
-Patient Appointment Booking
+The Patient Tracker System is a streamlined application designed to manage healthcare appointments and patient medical records efficiently. It offers functionalities for patient appointment booking and medical record management, providing secure and user-friendly access for both patients and healthcare staff.
 
-User authentication for patients
-Display of available appointment slots
-Appointment booking with automatic confirmation
-Notification system for appointment confirmations
+## Features
 
-Medical Record Management
+### Patient Appointment Booking
 
-Secure access for healthcare staff
-Ability to view patient medical history
-Update patient records with new medical information
-Chronological tracking of patient's medical history
+- **User Authentication**: Secure login for patients.
+- **Appointment Slots Display**: Shows available times for booking.
+- **Appointment Booking**: Patients can book appointments with automatic confirmation.
+- **Notification System**: Sends confirmations for booked appointments.
 
-Technical Details
-Data Models
+### Medical Record Management
 
-Patient: Stores patient information (ID, username, password, name, email, phone)
-HealthcareStaff: Manages staff information (ID, username, password, name, role)
-Appointment: Tracks appointment details (ID, patient ID, date, duration, status, notes)
-MedicalRecord: Contains medical information (ID, patient ID, updated by, update date, diagnosis, treatment plan, medications, notes)
+- **Secure Access**: Only authorized healthcare staff can access medical records.
+- **View Patient History**: Staff can view a patient's comprehensive medical history.
+- **Update Records**: Ability to update medical information with new diagnoses and treatments.
+- **Chronological Tracking**: Maintains a chronological order of the medical history updates.
 
-System Components
+## Technical Details
 
-DatabaseManager: Handles database operations and data persistence
-AppointmentSystem: Manages the appointment booking workflow
-MedicalRecordsSystem: Handles medical record operations
-NotificationSystem: Sends notifications for appointment confirmations
-PatientTrackerApp: Main application that coordinates all systems
+### Data Models
 
-Database Schema
-The system uses SQLite with the following tables:
+- **Patient**: Stores patient information (ID, username, password, name, email, phone).
+- **HealthcareStaff**: Manages information about healthcare staff (ID, username, password, name, role).
+- **Appointment**: Details about appointments (ID, patient ID, date, duration, status, notes).
+- **MedicalRecord**: Contains records of medical history (ID, patient ID, updated by, update date, diagnosis, treatment plan, medications, notes).
 
-patients
-healthcare_staff
-appointments
-medical_records
+### System Components
 
-Installation
+- **DatabaseManager**: Manages database operations and data persistence.
+- **AppointmentSystem**: Coordinates the appointment booking workflow.
+- **MedicalRecordsSystem**: Manages operations related to medical records.
+- **NotificationSystem**: Handles sending notifications for appointments.
+- **PatientTrackerApp**: Main application that integrates all components.
 
-Ensure you have Python 3.6+ installed
-Clone the repository
-Install the required dependencies:
-Copypip install -r requirements.txt
+## Database Schema
 
+The system uses SQLite with tables for:
+- `patients`
+- `healthcare_staff`
+- `appointments`
+- `medical_records`
 
-Usage
+## Installation
+
+Ensure you have Python 3.6+ installed:
+1. Clone the repository.
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
 Run the main script to start the application:
-Copypython patient_tracker.py
+```bash
+python patient_tracker.py
+```
 The system will present you with a menu to choose between:
+- Patient Appointment Booking
+- Update Medical Records
+- Exit
 
-Patient Appointment Booking
-Update Medical Records
-Exit
+## Demo Accounts
 
-Demo Accounts
 For demonstration purposes, the system comes pre-loaded with sample accounts:
-Patients:
 
-Username: patient1, Password: pass1 (John Doe)
-Username: patient2, Password: pass2 (Jane Smith)
+### Patients:
+- Username: patient1, Password: pass1 (John Doe)
+- Username: patient2, Password: pass2 (Jane Smith)
 
-Healthcare Staff:
+### Healthcare Staff:
+- Username: doctor1, Password: pass1 (Dr. Robert Johnson)
+- Username: nurse1, Password: pass2 (Nurse Sarah Williams)
 
-Username: doctor1, Password: pass1 (Dr. Robert Johnson)
-Username: nurse1, Password: pass2 (Nurse Sarah Williams)
+## Development
 
-Development
-Adding New Features
 To extend the system with new features:
+- Update the appropriate data models.
+- Extend the database schema in DatabaseManager.
+- Implement the business logic in respective system components.
+- Update the main PatientTrackerApp to include the new functionality.
 
-Update the appropriate data models
-Extend the database schema in DatabaseManager
-Implement the business logic in respective system components
-Update the main PatientTrackerApp to include the new functionality
+## Security Considerations
 
-Security Considerations
+- The current implementation uses plain text passwords for simplicity.
+- In a production environment, passwords should be hashed.
+- API endpoints should implement proper authentication and authorization.
+- Input validation should be added to prevent SQL injection.
 
-The current implementation uses plain text passwords for simplicity
-In a production environment, passwords should be hashed
-API endpoints should implement proper authentication and authorization
-Input validation should be added to prevent SQL injection
+## Future Enhancements
 
-Future Enhancements
-
-Web interface for easier access
-Mobile application for patients
-Integration with other healthcare systems
-Advanced notification systems (email, SMS)
-Data export/import capabilities
-Analytics dashboard for healthcare administrators
+- Web interface for easier access.
+- Mobile application for patients.
+- Integration with other healthcare systems.
+- Advanced notification systems (email, SMS).
+- Data export/import capabilities.
+- Analytics dashboard for healthcare administrators.
